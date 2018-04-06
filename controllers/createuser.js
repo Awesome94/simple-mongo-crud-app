@@ -1,15 +1,21 @@
 const User = require('../models/userSchema')
 
 const userHandler = (req, res)=>{
-  // newUser = new User();
-  // newUser.save({
-  //   name,
-  //   nickname
-  // }, (err, payload)=>{
-  //   if(err){
-  //     console.log(err);
-  //   }
-  // })
+  const {name, nickname} = req.body;
+
+  newUser = new User();
+  newUser.name = name;
+  newUser.nickname = nickname;
+
+  newUser.save((err, user)=>{
+    if(err){
+      console.log(err);
+      return res.staus(400).json({
+        "Message": "Saving User Failed"
+      });
+    }
+    res.status(200).json("user saved successfully")
+  })
 
 }
 module.exports = {

@@ -19,6 +19,7 @@ db.once("open", ()=>{
 })
 
 const app = express();
+app.use(bodyParser.json());
 
 app.get('/api/v1/user', getUser.getUserHandler);
 app.post('/api/v1/user', createUser.userHandler);
