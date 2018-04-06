@@ -3,10 +3,10 @@ const mongoose = require('mongoose');
 
 const getUserHandler = (req, res) => {
 const retuser = new Users();
-console.log ('thiss is ', retuser)
-Users.find({}, function(err, questions){
-  if (err) return next(err);
-  res.json(questions);
+
+Users.find({}, function(err, users){
+  if (err) return res.status(5000).json("Error: Server Error");
+  res.json(users);
 });
 }
 
