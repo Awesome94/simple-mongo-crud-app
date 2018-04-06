@@ -3,12 +3,15 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
-  name: {
+  firstName: {
     type: String, default: ''
   },
-  nickname: {
+  lastName: {
+    type: String, default: ''
+  },
+  email: {
     type: String, default: ''
   }
 });
 
-module.exports = mongoose.model('Users', userSchema)
+module.exports = mongoose.model('People', userSchema)

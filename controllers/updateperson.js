@@ -1,9 +1,9 @@
-const User = require('../models/userSchema');
+const Person = require('../models/userSchema');
 
-const updateUserHandler = (req, res) => {
+const updatePersonHandler = (req, res) => {
   const { name, nickname, } = req.body;
   const { id } = req.params
-  User.findOneAndUpdate({
+  Person.findOneAndUpdate({
     _id: id
   }, {
       $set: {
@@ -19,5 +19,5 @@ const updateUserHandler = (req, res) => {
 }
 
 module.exports = {
-  updateUserHandler: updateUserHandler
+  updatePersonHandler: updatePersonHandler
 }
